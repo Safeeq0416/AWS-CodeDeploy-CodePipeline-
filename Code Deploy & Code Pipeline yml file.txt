@@ -1,0 +1,18 @@
+version:0.0
+os:linux
+file:
+  -source:/index.html
+destination:/var/www/html
+hooks:
+  before install:
+    -location:scripts/httpd_install.sh
+  timeout:300
+runas:root
+-location:scripts/httpd_start.sh
+  timeout:300
+runas:root
+Application stop:
+-location:scripts/httpd_stop.sh
+  timeout:300
+runas:root
+
